@@ -1,0 +1,1 @@
+<p class="category"><h3 style="display: inline;"><span style="color: <?= $dettaglio['color'] ?>"><b><?= $dettaglio['cnt'] ?></b></span></h3> <b><?= ucfirst($dettaglio['scodice']) ?></b> con priorità <b><?= ucfirst($dettaglio['codice']) ?></b></p>

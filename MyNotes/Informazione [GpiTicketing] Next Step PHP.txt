@@ -1,0 +1,208 @@
+NOTE: 27/09/2018
+http://10.168.21.210/tickets/ticket?TicketsSearchModel%5Bid_ticket%5D=&TicketsSearchModel%5Bcliente_finale%5D=XIDERA%20S.R.L.&TicketsSearchModel%5Burgenza%5D=&TicketsSearchModel%5Bpriorita%5D=&TicketsSearchModel%5Bdatascadenza%5D=&TicketsSearchModel%5Boggetto%5D=&TicketsSearchModel%5Boperatore_gpi%5D=&TicketsSearchModel%5Bstato%5D=&TicketsSearchModel%5Bid_sorgente%5D=&TicketsSearchModel%5Bsolleciti%5D=&TicketsSearchModel%5Bdatamodifica%5D=&TicketsSearchModel%5Bdataapertura%5D=&TicketsSearchModel%5Bgruppi%5D=
+
+
+NOTE: 26/09/2018
+http://10.168.21.210/tickets/ticket?TicketsSearchModel%5Bid_ticket%5D=&TicketsSearchModel%5Bcliente_finale%5D=&TicketsSearchModel%5Burgenza%5D=&TicketsSearchModel%5Bpriorita%5D=&TicketsSearchModel%5Bdatascadenza%5D=&TicketsSearchModel%5Boggetto%5D=&TicketsSearchModel%5Boperatore_gpi%5D=INCALZA%20ANTONIO&TicketsSearchModel%5Bstato%5D=&TicketsSearchModel%5Bid_sorgente%5D=&TicketsSearchModel%5Bsolleciti%5D=&TicketsSearchModel%5Bdatamodifica%5D=&TicketsSearchModel%5Bdataapertura%5D=&TicketsSearchModel%5Bgruppi%5D=
+
+http://10.168.21.210./tickets/ticket?TicketsSearchModel%5Boperatore_gpi%5D=INCALZA ANTONIO
+
+AMAINA MAURIZIO
+http://10.168.21.210/tickets/ticket?TicketsSearchModel%5Boperatore_gpi%5D=INCALZA%20ANTONIO
+
+http://10.168.21.210/tickets/ticket?TicketsSearchModel%5Boperatore_gpi%5D=MENAFRA RICCARDO
+
+
+AMAINA MAURIZIO
+
+Leggenda:
+(x)	= Non possibile.
+[*]	= Fatto.
+[ ]	= in attenzione.
+
+TO DO:
+PN	[*] [ADMIN] [SPOC] [OPERATORE]
+				Voce di menù: Lista Ticket.
+				- Url ticket San Donato Aprire un tab nuovo non nella stessa pagina.
+N		[*] [ADMIN] [SPOC]
+				Voce di menù:
+				- Operatori Presenti/Assenti, Errore!.
+				[*] Fare il Calendario dentro di Operatori Presenti/Assenti
+				[*] Mettere i Ferie e permesso degli operatori nel Calendario.
+						(x) Devo metere i eventi cosi:
+								24/08/18 - 29/08/18 => 1 solo evento,"lavora 8:00".
+								30/08/18						=> 1 solo evento,"con permesso 5:00"
+								31/08/18 - 05/09/18 => 1 solo evento,"lavora 8:00".
+								06/09/18 - 10/09/18 => 1 solo evento,"ferie 0:00"
+						x=> Note: Il problema con mettere un evento con un "inntervallo" tra giorni non fornisce la possibilità di mettere una URL, per cercare i "Tickets che va atendere il operatore certo giorno".
+						- Mettere il evento ("Ferie o permesso"), uno per giorno senza "intervalli di giorni".
+				[*] Fare vedere il "Orario" degli operatore:
+							Si sa che un operatore sta nella azienda, secondo i compiti che mette nella tabella "attivita_operatore" in un stato 'Pianificato'.
+							Quindi Habiamo tre stati:
+								- Non lavora si ha messo un "task" di "permesso" o "ferie" per "8 Ore".
+								- Lavoro Parziale si ha messo un "task" di "permesso" per "8 Ore".
+								- Lavoro completo se non ha nessun "task" di "permesso" o "ferie".
+							Colori:
+								giorni
+									oggi	: #24FC21
+									ferie	: #ffb3b3
+								operatori
+									- Un'operatore lavora 8 ore.
+									- Un'operatore prende permesso o ferie ("task"), con un controllo per 'Ore'.
+									(8:00) full-time	: #b3ff66
+									(7:30) part-time	: #a0a0a0
+									(0:00) senza-asistencia: "white" and testo con "text-decoration: line-through"
+							TO DO "30/08/18":
+							[*] Chiamare a tutti i operatori.
+							(x) Mettere i eventi di asistenzia "full-time" per giorno. (Penso in recurrenzia). -> Non è posibile la recurrenzia :'(
+							[*] Validare il evento. (si certo giorno a "permesso" o "ferie" aggiornare il evento per questo giorno.)
+							[*] Cambiare i colori secondo il orario che ha il operatore.
+									- [*] Sarà buono mettere il ordine secondo ore di asistencia.
+PN	[*] Logout con bottone Exit.
+				-> Si viene rediretti a https://remedy.gpi.it/arsys/shared/login.jsp.
+				[*] Mettere una pagina di uscita diversa.
+						- ritorna al sito "site" action "Login",
+				[*] Mettere label "Logout".
+PN	[*] Logout con bottone Logout.
+				-> Si viene rediretti a https://remedy.gpi.it/arsys/shared/login.jsp.
+				[*] Mettere una pagina di uscita diversa.
+						(Quale Pagina?)
+						Forse mettere un Page Logout, con un menu de links.
+
+Punti "da vedere":
+- Quale sarà la nuova pagina a la quale ritorna "Logout".
+Notes "da sincronizzare.":
+- Sincronizare la nuova tabella "attivita_operatore" che genera il "Calendario" insieme con la tabella "operatore_gpi";
+- Sincronizzare la tabella "tickets" collegata con "operatore_gpi", nella proprieta 'tickets.id_operatore_gpi';
+
+
+
+
+SLACK LINK GROUP:
+https://join.slack.com/t/trentinos/shared_invite/enQtNDIwODY1ODM1NDI4LTliZjhhOWEzNjZiY2QwMWI3MTk5OTUxYWY5MTUwNjI5Y2JiYTFhMGIzZTcyZWE1OTE1ZTkxMmVkYTA1ODljMmI
+
+Michele TOnina -> Progetto vecchio. / � qua.
+Samuele Renati... -> Front ENd, Nuovo progetto. / Venecia
+Gabriele Guerra -> Backend, progetto nuovo. / Venecia / Mestre
+Tefo James -> Domanda generale
+Silvio Pacei ... ?
+C:\xampp\htdocs\TIKETING-SAT\vendor\yiisoft\yii2\db\
+"Guerra Gabriele" <gabriele.guerra@gpi.it>;
+
+DA RIPORTARE:
+new struttura di URL, per login User...
+	-> http://localhost/site/login?nomeutenteremedy=mtonina
+correzione per:
+		http://10.192.1.219/?nomeutenteremedy=mtonina
+		(ancora non trovo una soluzione, mi manca vedere più informacione)...
+
+Profili:
+	- Admin – deve vedere tutti i menù (successivamente vedrà anche la Reportistica che non vedrà lo SPOC)
+	- SPOC – deve vedere tutti i menù
+	- Operatore – deve vedere solo la lista ticket con i ticket solo assegnati a lui
+		[*] vado a fare la creazione di una "view" e un "search" i quale mostrano solo i tickets per il operatore, chiamandolo "ticketOperatore" => "ticket-operatore" => "tickets/ticket-operatore".
+	 	[*] modifica nel filtro where (si esiste un operatore "logato" fare il filtro per il "id_operatore" - penso que se puo fare il controllo dal DataBase).
+
+NOTES:
+[/*\] Gestire la tabella Tickets per predere i dati dalla tabella "OPERATORE_GPI";
+-> Per addesso o messo una colona che si chiama "Operatore Nick", il quale se collega con la tabella 'ticketing.operatori_gpi' e prende il "codice".
+
+NOTES:
+[*] Gestire le sesione degli utenti dentro della APP.
+[*] Gestire il Profilo del utente per gestire il livello di Funzionalità che ha.(p, rel, f)
+		- determinare codice degli utenti
+		- Le actions.
+		- il main.php(il menù) = Funzionalità.
+		- default site (secondo la funzionalida del profilo).
+		Esempi:
+		Secondo struttura di URL http://10.192.1.219/site/login?nomeutenteremedy="'codice' di Utente per Operatore"
+			admin 			=> floris
+			http://10.192.1.219/site/login?nomeutenteremedy=floris
+			spoc 				=> mriccardo
+			http://10.192.1.219/site/login?nomeutenteremedy=mriccardo
+			operatore:
+				tmoreno
+				http://10.192.1.219/site/login?nomeutenteremedy=tmoreno
+				pmassimo
+				http://10.192.1.219/site/login?nomeutenteremedy=pmassimo
+Ho sbagliato [ ] permitere i filtri per ID TICKET con la url per IDTICKET solo GLPI SAN DONATO in Lista Ticket.
+		esempi:
+		https://servicedesk.grupposandonato.it/gsd/front/ticket.form.php?id=20437
+		https://servicedesk.grupposandonato.it/gsd/front/ticket.form.php?id=20435
+		https://servicedesk.grupposandonato.it/gsd/front/ticket.form.php?id=20433
+		Possibili passi:
+		- Aggiungere una Variable nella ACTION del TICKET, per prendere il Ticket secondo il ID.
+		- Fare modifiche per le 2 ModalSearch per Ticket-Operatore e Ticket General.
+			-> oppure Cambiare come Yii gestisce i URL
+		opprure	fare un nuovo Action() che controllo secondo il ID del ticket fare la ricerca.
+
+[*] Mettere i links con questa struttura:
+ 		https://servicedesk.grupposandonato.it/gsd/front/ticket.form.php?id=20437
+		sull'id del Ticket.
+
+Mail To @ElissabettaTecchio:
+Le strutture per il login con la implementazione sono:
+	http://10.192.1.219/site/login?nomeutenteremedy="'codice' di Utente per Operatore"
+	I eletti:
+		admin 			=> floris
+		http://10.192.1.219/site/login?nomeutenteremedy=floris
+		spoc 				=> mriccardo
+		http://10.192.1.219/site/login?nomeutenteremedy=mriccardo
+		operatore 	=> mtonina
+		http://10.192.1.219/site/login?nomeutenteremedy=mtonina
+
+http://10.192.1.219/site/login?nomeutenteremedy=floris
+I eletti:
+	admin 			=> floris
+	http://10.192.1.219/site/login?nomeutenteremedy=floris
+	spoc 				=> mriccardo
+	http://10.192.1.219/site/login?nomeutenteremedy=mriccardo
+	operatore:
+		tmoreno
+		http://10.192.1.219/site/login?nomeutenteremedy=tmoreno
+		pmassimo
+		http://10.192.1.219/site/login?nomeutenteremedy=pmassimo
+
+NOTES USERS:
+Profilo	Operatore	codiceLogin
+Admin	FACCENDA LORIS	lfaccenda
+SPOC	NICOLI CHRISTIAN	cnicoli
+SPOC	MENAFRA RICCARDO	rmenafra
+SPOC	AMAINA MAURIZIO	mamaina
+SPOC	PAVONE EMANUELA	epavone
+SPOC	MORELLI MARCO	mmorelli
+SPOC	MONTUORO GIANLUCA	gmontuoro
+SPOC	BAIOCCHI GIANLUCA	gbaiocchi
+SPOC	GALLO MICHELE	mgallo
+SPOC	PETICCHIA DAVIDE	dpeticchia
+SPOC	MURA ANDREA	amura
+SPOC	INCALZA ANTONIO	aincalza
+Operatore	DI TOMMASO ALBERTO	atommaso
+Operatore	CHINAGLIA CLAUDIA	cchinaglia
+Operatore	BERTUCCIO ANTONIO	abertuccio
+Operatore	FRANCHINA GIOVANNI MARCO	gfranchina
+Operatore	BARBERI GABRIELE	gbarberi
+Operatore	VERDI CLEMENTE GIUSEPPE	cverdi
+Operatore	TOMASI MORENO	mtomasi
+Operatore	GAMBUTI MANUEL	mgambuti
+Operatore	PALUSA SERGIO	spalusa
+Operatore	COMIN MATTEO	mcomin
+Operatore	BELTRAME SANDRO	sbeltrame
+Operatore	RALLO PIETRO	prallo
+Operatore	LECCARDI MATTEO FRANCESCO	mleccardi
+Operatore	TONINA MICHELE	mtonina
+Operatore	MEZZULLO AGOSTINO	amezzullo
+Operatore	MATTIUZZO MAURO	mmattiuzzo
+Operatore	LUNARDI FRANCESCO	flunardi
+Operatore	AYBAR CRISCUOLO JUAN CARLOS	cayvar
+Operatore	DE RINALDIS ANDREA	arinaldis
+Operatore	BETTATI ANDREA	abettati
+Operatore	D'AQUILA DIEGO	daguila
+Operatore	RITELLA ALESSIO	aritella
+Operatore	COLANGELO NICOLA	ncolangelo
+Operatore	FRANCO FRANCESCO	ffranco
+Operatore	MEZZINA SERGIO	smezzina
+Operatore	LACONI LUCA	llaconi
+Operatore	MITTEMPERGHER ROBERTO	rmittempergher
+Operatore	GEROLA ANDREA	agerola
+Operatore	PONTARA MASSIMO	mpontara
